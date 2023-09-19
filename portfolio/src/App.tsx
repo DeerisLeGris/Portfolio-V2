@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from './components/layout/Header';
 
-function App() {
+const App = () => {
   return (
     <Box 
       bgColor="secondary" 
@@ -16,6 +16,6 @@ function App() {
       </Container>
     </Box>
   );
-}
+};
 
 export default App;
