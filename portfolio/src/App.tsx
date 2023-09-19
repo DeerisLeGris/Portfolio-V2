@@ -1,22 +1,20 @@
-import React from 'react';
+import { Container, Box } from '@chakra-ui/react';
+import { Outlet } from 'react-router-dom';
+
+import Header from './components/layout/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box 
+      bgColor="secondary" 
+      minH="100vh" 
+      w="full"
+    >
+      <Header/>
+      <Container pt="28" maxW="container.xl">
+        <Outlet />
+      </Container>
+    </Box>
   );
 }
 
