@@ -38,8 +38,13 @@ const Header = ({
     }
   ];
 
-  const handleLinkedinButtonClick = useCallback(() => window.open(portfolioContent.header.linkedinLink, "_blank"), []);
-  const handleGithubButtonClick = useCallback(() => window.open(portfolioContent.header.githubLink, "_blank"), []);
+  const handleLinkedinButtonClick = useCallback(() => 
+    window.open(portfolioContent.header.linkedinLink, "_blank"), 
+  []);
+
+  const handleGithubButtonClick = useCallback(() =>
+    window.open(portfolioContent.header.githubLink, "_blank"), 
+  []);
 
   return (
     <Flex 
@@ -50,7 +55,7 @@ const Header = ({
       bg="primary"
       color="secondary"
       alignItems="center"
-      justifyContent="space-between"
+      justifyContent={{base: "stretch", md: "space-between"}}
       pt="10px" // To counterbalance the outset image
       sx={{
         borderBottom: "10px solid transparent",
@@ -59,7 +64,7 @@ const Header = ({
       }}
       {...props}
     >
-      <HStack>
+      <HStack display={{base: "none", md: "flex"}}>
         <Heading p="0">
           {portfolioContent.header.name}
         </Heading>
@@ -78,7 +83,11 @@ const Header = ({
           onClick={handleGithubButtonClick}
         />
       </HStack>
-      <HStack gap="4">
+      <HStack 
+        gap="4" 
+        justifyContent={{base: "center", md: "start"}}
+        w={{base: "full", md: "auto"}}
+      >
         {links.map(({link, name, icon}) => (
           <Button
             key={link}

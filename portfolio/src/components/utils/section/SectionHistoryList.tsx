@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Text, HStack, StackProps, Icon, Heading, Stack, Link, VStack } from "@chakra-ui/react";
+import { Text, HStack, StackProps, Icon, Heading, Stack, Link } from "@chakra-ui/react";
 import { BsArrowRight } from "react-icons/bs"
 import { BiLinkExternal } from "react-icons/bi"
 
@@ -24,7 +24,10 @@ const SectionHistoryListItem = ({
   links
 } : SectionHistoryListItemProps) => {
   return (
-    <HStack alignItems="start">
+    <Stack 
+      direction={{base: "column", md: "row"}}
+      alignItems="start"
+    >
       <HStack 
         bg="tertiary" 
         color="secondary" 
@@ -60,12 +63,12 @@ const SectionHistoryListItem = ({
           </Stack>
         )}
         {description && (
-          <Text fontStyle="italic" fontSize="xl">
+          <Text fontStyle="italic" fontSize={{base: "md", md: "xl"}}>
             {description}
           </Text>
         )}
       </Stack>
-    </HStack>
+    </Stack>
   )
 };
 

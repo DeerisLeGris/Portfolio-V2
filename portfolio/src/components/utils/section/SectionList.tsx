@@ -15,12 +15,12 @@ const SectionList = ({
 } : SectionListProps) => {
   if (direction === "horizontal") {
     return (
-      <HStack>
+      <HStack flexWrap="wrap">
         {items.map((item, index) => (
           <Text
             key={index}
             color="tertiary"
-            fontSize="xl"
+            fontSize={{base: "md", md: "xl"}}
           >
             {item}
             {index !== (items.length - 1) && (
@@ -46,7 +46,10 @@ const SectionList = ({
       {...props}
     >
       {items.map((item, index) => (
-        <ListItem key={index}>
+        <ListItem 
+          key={index} 
+          fontSize={{base: "md", md: "xl"}}
+        >
           <ListIcon as={BsFillArrowRightCircleFill} />
           {item}
         </ListItem>

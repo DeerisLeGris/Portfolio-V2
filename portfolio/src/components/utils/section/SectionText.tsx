@@ -8,7 +8,7 @@ const SectionText = ({
   return (
     <Text 
       color="tertiary"
-      fontSize="xl"
+      fontSize={{base: "md", md: "xl"}}
       {...props}
     />
   )

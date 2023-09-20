@@ -15,10 +15,10 @@ const SectionTitle = ({
     <HStack color="tertiary" gap="4">
       <Icon as={icon} h="12" w="12" />
       <Stack 
-        w="max-content"
+        w={{base: "full", md: "max-content"}}
         mt="2"
       >
-        <Heading size="2xl">
+        <Heading size={{base: "xl", md: "2xl"}}>
           {title}
         </Heading>
         <Box 

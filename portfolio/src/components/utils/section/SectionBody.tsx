@@ -7,7 +7,7 @@ const SectionBody = ({
 } : StackProps) => {
   return (
     <Stack 
-      pl="16"
+      pl={{base: "0", lg: "16"}}
       gap="4"
       {...props}
     />
