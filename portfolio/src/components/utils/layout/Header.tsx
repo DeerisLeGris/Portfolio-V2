@@ -13,8 +13,9 @@ import {
   AiOutlineAppstore 
 } from "react-icons/ai";
 
-import portfolioContent from '../../portfolio_content.json';
 import { Link } from "react-router-dom";
+
+import portfolioContent from '../../../portfolio_content.json';
 
 const Header = ({
   ...props
