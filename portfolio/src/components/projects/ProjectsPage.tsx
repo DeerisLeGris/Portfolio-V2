@@ -8,6 +8,7 @@ import Section from "../utils/section/Section";
 import SectionTitle from "../utils/section/SectionTitle";
 import SectionBody from "../utils/section/SectionBody";
 import SectionHistoryList from "../utils/section/SectionHistoryList";
+import SectionText from "../utils/section/SectionText";
 
 import portfolioContent from '../../portfolio_content.json';
 
@@ -19,8 +20,11 @@ const ProjectsPage = () => {
         title="Mes projets"
       />
       <SectionBody>
+        <SectionText>
+          {portfolioContent.projects.description} 
+        </SectionText>
         <SectionHistoryList 
-          items={portfolioContent.projects} 
+          items={portfolioContent.projects.list} 
         />
       </SectionBody>
     </Section>
