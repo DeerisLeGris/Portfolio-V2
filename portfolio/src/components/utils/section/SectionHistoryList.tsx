@@ -1,28 +1,28 @@
 import React from "react";
 
-import { Text, HStack, StackProps, Icon, Heading, Stack, Link } from "@chakra-ui/react";
+import { Text, HStack, StackProps, Icon, Heading, Stack, Link, VStack } from "@chakra-ui/react";
 import { BsArrowRight } from "react-icons/bs"
 import { BiLinkExternal } from "react-icons/bi"
 
-type SectionHistoryItemProps = {
+type SectionHistoryListItemProps = {
   startDate: string;
   endDate: string;
   title: string;
   description?: string;
-  link?: string;
+  links?: string[];
 };
 
-type SectionHistoryProps = {
-  items: SectionHistoryItemProps[];
+type SectionHistoryListProps = {
+  items: SectionHistoryListItemProps[];
 } & StackProps;
 
-const SectionHistoryItem = ({
+const SectionHistoryListItem = ({
   startDate,
   endDate,
   title,
   description,
-  link
-} : SectionHistoryItemProps) => {
+  links
+} : SectionHistoryListItemProps) => {
   return (
     <HStack alignItems="start">
       <HStack 
@@ -43,16 +43,21 @@ const SectionHistoryItem = ({
         <Heading size="lg">
           {title}
         </Heading>
-        {link && (
-          <Link 
-            color="tertiary" 
-            fontStyle="italic"
-            href={link} 
-            isExternal
-          >
-            {link}
-            <Icon as={BiLinkExternal} ml="1" h="4" w="4" />
-          </Link>
+        {links && (
+          <Stack gap="1">
+            {links?.map((link) => (
+              <Link 
+                key={link}
+                color="tertiary" 
+                fontStyle="italic"
+                href={link} 
+                isExternal
+              >
+                {link}
+                <Icon as={BiLinkExternal} ml="1" h="4" w="4" />
+              </Link>
+            ))}
+          </Stack>
         )}
         {description && (
           <Text fontStyle="italic" fontSize="xl">
@@ -64,14 +69,17 @@ const SectionHistoryItem = ({
   )
 };
 
-const SectionHistory = ({
+const SectionHistoryList = ({
   items,
   ...props
-} : SectionHistoryProps) => {
+} : SectionHistoryListProps) => {
   return (
-    <Stack {...props}>
+    <Stack 
+      gap="6" 
+      {...props}
+    >
       {items.map((item) => (
-        <SectionHistoryItem 
+        <SectionHistoryListItem 
           key={item.title} 
           {...item} 
         />
@@ -80,4 +88,4 @@ const SectionHistory = ({
   )
 };
 
-export default React.memo(SectionHistory);
+export default React.memo(SectionHistoryList);

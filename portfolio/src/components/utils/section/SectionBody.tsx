@@ -1,13 +1,14 @@
 import React from "react";
 
-import { Box, BoxProps } from "@chakra-ui/react";
+import { Stack, StackProps } from "@chakra-ui/react";
 
 const SectionBody = ({
   ...props
-} : BoxProps) => {
+} : StackProps) => {
   return (
-    <Box 
+    <Stack 
       pl="16"
+      gap="4"
       {...props}
     />
   )

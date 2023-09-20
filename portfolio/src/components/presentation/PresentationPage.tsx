@@ -10,7 +10,7 @@ import Section from "../utils/section/Section";
 import SectionText from "../utils/section/SectionText";
 import SectionList from "../utils/section/SectionList";
 import SectionBody from "../utils/section/SectionBody";
-import SectionHistory from "../utils/section/SectionHistory";
+import SectionHistoryList from "../utils/section/SectionHistoryList";
 
 import portfolioContent from '../../portfolio_content.json';
 import SectionLink from "../utils/section/SectionLink";
@@ -26,23 +26,21 @@ const PresentationPage = () => {
           title="Bienvenue !"
         />
         <SectionBody>
-          <Stack gap="4">
-            <SectionText>
-              {portfolioContent.presentation.description}
-            </SectionText>
-            <SectionLink
-              icon={BiLogoGithub}
-              href={portfolioContent.header.githubLink} 
-            >
-              Mon GitHub
-            </SectionLink>
-            <SectionLink
-              icon={BiLogoLinkedinSquare}
-              href={portfolioContent.header.linkedinLink} 
-            >
-              Mon Linkedin
-            </SectionLink>
-          </Stack>
+          <SectionText>
+            {portfolioContent.presentation.description}
+          </SectionText>
+          <SectionLink
+            icon={BiLogoGithub}
+            href={portfolioContent.header.githubLink} 
+          >
+            Mon GitHub
+          </SectionLink>
+          <SectionLink
+            icon={BiLogoLinkedinSquare}
+            href={portfolioContent.header.linkedinLink} 
+          >
+            Mon Linkedin
+          </SectionLink>
         </SectionBody>
       </Section>
 
@@ -52,7 +50,7 @@ const PresentationPage = () => {
           title="Expériences professionnelles"
         />
         <SectionBody>
-          <SectionHistory 
+          <SectionHistoryList 
             items={portfolioContent.presentation.professionalExperience} 
           />
         </SectionBody>
@@ -101,7 +99,7 @@ const PresentationPage = () => {
           title="Mes formations"
         />
         <SectionBody>
-          <SectionHistory 
+          <SectionHistoryList 
             items={portfolioContent.presentation.courses} 
           />
         </SectionBody>
