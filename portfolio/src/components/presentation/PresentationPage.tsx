@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Icon, Link, Stack, VStack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { BiHappyAlt, BiListOl, BiCodeCurly, BiSolidGraduation, BiLogoLinkedinSquare, BiLogoGithub } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
 import { LuLanguages } from "react-icons/lu";
@@ -16,10 +16,6 @@ import portfolioContent from '../../portfolio_content.json';
 import SectionLink from "../utils/section/SectionLink";
 
 const PresentationPage = () => {
-  const liste = [
-    "Test 1", "Test 2", "Test 3", "Test 4"
-  ];
-
   return (
     <Stack 
       gap="8"
