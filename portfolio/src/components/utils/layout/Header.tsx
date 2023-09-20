@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { 
   Button, 
@@ -6,12 +6,17 @@ import {
   FlexProps, 
   HStack, 
   Heading, 
-  Icon
+  Icon,
+  IconButton
 } from "@chakra-ui/react";
 import { 
   AiOutlineHome, 
   AiOutlineAppstore 
 } from "react-icons/ai";
+import { 
+  BiLogoLinkedinSquare ,
+  BiLogoGithub
+} from "react-icons/bi";
 
 import { Link } from "react-router-dom";
 
@@ -33,6 +38,9 @@ const Header = ({
     }
   ];
 
+  const handleLinkedinButtonClick = useCallback(() => window.open(portfolioContent.header.linkedinLink, "_blank"), []);
+  const handleGithubButtonClick = useCallback(() => window.open(portfolioContent.header.githubLink, "_blank"), []);
+
   return (
     <Flex 
       h="20" 
@@ -51,9 +59,25 @@ const Header = ({
       }}
       {...props}
     >
-      <Heading p="0">
-        {portfolioContent.name}
-      </Heading>
+      <HStack>
+        <Heading p="0">
+          {portfolioContent.header.name}
+        </Heading>
+        <IconButton 
+          icon={<Icon as={BiLogoLinkedinSquare} h="5" w="5"/>}
+          color="secondary"
+          aria-label="linkedin"
+          variant="link"
+          onClick={handleLinkedinButtonClick}
+        />
+        <IconButton 
+          icon={<Icon as={BiLogoGithub} h="5" w="5"/>}
+          color="secondary"
+          aria-label="linkedin"
+          variant="link"
+          onClick={handleGithubButtonClick}
+        />
+      </HStack>
       <HStack gap="4">
         {links.map(({link, name, icon}) => (
           <Button
