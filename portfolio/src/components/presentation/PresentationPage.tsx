@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Stack } from "@chakra-ui/react";
-import { BiHappyAlt, BiListOl, BiCodeCurly, BiSolidGraduation } from "react-icons/bi";
+import { Icon, Link, Stack, VStack } from "@chakra-ui/react";
+import { BiHappyAlt, BiListOl, BiCodeCurly, BiSolidGraduation, BiLogoLinkedinSquare, BiLogoGithub } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
 import { LuLanguages } from "react-icons/lu";
 
@@ -13,6 +13,7 @@ import SectionBody from "../utils/section/SectionBody";
 import SectionHistory from "../utils/section/SectionHistory";
 
 import portfolioContent from '../../portfolio_content.json';
+import SectionLink from "../utils/section/SectionLink";
 
 const PresentationPage = () => {
   const liste = [
@@ -29,9 +30,23 @@ const PresentationPage = () => {
           title="Bienvenue !"
         />
         <SectionBody>
-          <SectionText>
-            test
-          </SectionText>
+          <Stack gap="4">
+            <SectionText>
+              {portfolioContent.presentation.description}
+            </SectionText>
+            <SectionLink
+              icon={BiLogoGithub}
+              href={portfolioContent.header.githubLink} 
+            >
+              Mon GitHub
+            </SectionLink>
+            <SectionLink
+              icon={BiLogoLinkedinSquare}
+              href={portfolioContent.header.linkedinLink} 
+            >
+              Mon Linkedin
+            </SectionLink>
+          </Stack>
         </SectionBody>
       </Section>
 
@@ -53,7 +68,9 @@ const PresentationPage = () => {
           title="Mes compétences"
         />
         <SectionBody>
-          <SectionList items={liste} direction="horizontal" /> 
+          <SectionList 
+            items={portfolioContent.presentation.skills} 
+          /> 
         </SectionBody>
       </Section>
 
@@ -63,7 +80,10 @@ const PresentationPage = () => {
           title="Mes langages de programmation"
         />
         <SectionBody>
-          <SectionList items={liste} />
+          <SectionList 
+            items={portfolioContent.presentation.programmingLanguages} 
+            direction="horizontal" 
+          />
         </SectionBody>
       </Section>
 
@@ -73,9 +93,9 @@ const PresentationPage = () => {
           title="Mes langues"
         />
         <SectionBody>
-          <SectionText>
-            test
-          </SectionText>
+          <SectionList 
+            items={portfolioContent.presentation.languages} 
+          />
         </SectionBody>
       </Section>
 
@@ -85,9 +105,9 @@ const PresentationPage = () => {
           title="Mes formations"
         />
         <SectionBody>
-          <SectionText>
-            test
-          </SectionText>
+          <SectionHistory 
+            items={portfolioContent.presentation.courses} 
+          />
         </SectionBody>
       </Section>
       

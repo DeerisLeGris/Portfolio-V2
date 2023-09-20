@@ -46,6 +46,7 @@ const SectionHistoryItem = ({
         {link && (
           <Link 
             color="tertiary" 
+            fontStyle="italic"
             href={link} 
             isExternal
           >
