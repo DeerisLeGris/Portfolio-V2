@@ -10,6 +10,9 @@ import Section from "../utils/section/Section";
 import SectionText from "../utils/section/SectionText";
 import SectionList from "../utils/section/SectionList";
 import SectionBody from "../utils/section/SectionBody";
+import SectionHistory from "../utils/section/SectionHistory";
+
+import portfolioContent from '../../portfolio_content.json';
 
 const PresentationPage = () => {
   const liste = [
@@ -38,7 +41,9 @@ const PresentationPage = () => {
           title="Expériences professionnelles"
         />
         <SectionBody>
-          <SectionList items={liste} /> 
+          <SectionHistory 
+            items={portfolioContent.presentation.professionalExperience} 
+          />
         </SectionBody>
       </Section>
 
@@ -58,9 +63,7 @@ const PresentationPage = () => {
           title="Mes langages de programmation"
         />
         <SectionBody>
-          <SectionText>
-            test
-          </SectionText>
+          <SectionList items={liste} />
         </SectionBody>
       </Section>
 
