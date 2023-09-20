@@ -4,8 +4,8 @@ import App from './App';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from './components/utils/theme';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import PresentationPage from './components/presentation/PresentationPage';
-import ProjectsPage from './components/projects/ProjectsPage';
+import PresentationPage from './components/pages/PresentationPage';
+import ProjectsPage from './components/pages/ProjectsPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
