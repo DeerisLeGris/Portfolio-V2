@@ -57,6 +57,7 @@ const Header = ({
       <HStack gap="4">
         {links.map(({link, name, icon}) => (
           <Button
+            key={link}
             as={Link}
             to={link}
             leftIcon={<Icon as={icon} w="5" h="5"/>}

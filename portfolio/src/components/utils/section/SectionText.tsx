@@ -9,7 +9,6 @@ const SectionText = ({
     <Text 
       color="tertiary"
       fontSize="xl"
-      ml="16"
       {...props}
     />
   )

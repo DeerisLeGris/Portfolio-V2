@@ -5,11 +5,17 @@ import { BiHappyAlt, BiListOl, BiCodeCurly, BiSolidGraduation } from "react-icon
 import { MdWork } from "react-icons/md";
 import { LuLanguages } from "react-icons/lu";
 
-import SectionTitle from "../utils/SectionTitle";
-import Section from "../utils/Section";
-import SectionText from "../utils/SectionText";
+import SectionTitle from "../utils/section/SectionTitle";
+import Section from "../utils/section/Section";
+import SectionText from "../utils/section/SectionText";
+import SectionList from "../utils/section/SectionList";
+import SectionBody from "../utils/section/SectionBody";
 
 const PresentationPage = () => {
+  const liste = [
+    "Test 1", "Test 2", "Test 3", "Test 4"
+  ];
+
   return (
     <Stack 
       gap="8"
@@ -19,9 +25,11 @@ const PresentationPage = () => {
           icon={BiHappyAlt}
           title="Bienvenue !"
         />
-        <SectionText>
-          test
-        </SectionText>
+        <SectionBody>
+          <SectionText>
+            test
+          </SectionText>
+        </SectionBody>
       </Section>
 
       <Section>
@@ -29,9 +37,9 @@ const PresentationPage = () => {
           icon={MdWork}
           title="Expériences professionnelles"
         />
-        <SectionText>
-          test
-        </SectionText>
+        <SectionBody>
+          <SectionList items={liste} /> 
+        </SectionBody>
       </Section>
 
       <Section>
@@ -39,9 +47,9 @@ const PresentationPage = () => {
           icon={BiListOl}
           title="Mes compétences"
         />
-        <SectionText>
-          test
-        </SectionText>
+        <SectionBody>
+          <SectionList items={liste} direction="horizontal" /> 
+        </SectionBody>
       </Section>
 
       <Section>
@@ -49,9 +57,11 @@ const PresentationPage = () => {
           icon={BiCodeCurly}
           title="Mes langages de programmation"
         />
-        <SectionText>
-          test
-        </SectionText>
+        <SectionBody>
+          <SectionText>
+            test
+          </SectionText>
+        </SectionBody>
       </Section>
 
       <Section>
@@ -59,9 +69,11 @@ const PresentationPage = () => {
           icon={LuLanguages}
           title="Mes langues"
         />
-        <SectionText>
-          test
-        </SectionText>
+        <SectionBody>
+          <SectionText>
+            test
+          </SectionText>
+        </SectionBody>
       </Section>
 
       <Section>
@@ -69,9 +81,11 @@ const PresentationPage = () => {
           icon={BiSolidGraduation}
           title="Mes formations"
         />
-        <SectionText>
-          test
-        </SectionText>
+        <SectionBody>
+          <SectionText>
+            test
+          </SectionText>
+        </SectionBody>
       </Section>
       
     </Stack>
